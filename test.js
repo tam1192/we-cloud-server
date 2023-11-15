@@ -10,7 +10,7 @@ const path = require('path');
 const address = 'localhost:3000';
 const schemaData = path.join(__dirname, 'csx1973.schem');
 const userUuid = 'ex1234';
-const schemaName = 'ex1234';
+const schemaName = 'ex5678';
 
 // response debuger
 
@@ -24,7 +24,8 @@ function resdbg(res) {
 // upload
 async function upload(){
     // data
-    const data = fs.readFileSync(schemaData);
+    // const data = fs.readFileSync(schemaData);
+    const data = "12345";
     // url
     const url = new URL(`http://${address}/api/${userUuid}/${schemaName}`);
 
@@ -75,9 +76,9 @@ async function del() {
 }
 
 (async()=>{
-    //await upload();
-    //await list();
-    await del();
+    await upload();
+    await list();
+    //await del();
     //await list();
 })();
 

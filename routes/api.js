@@ -36,7 +36,8 @@ router.get('/:uuid', async (req, res) => {
     });
     // jsonで返信
     // reply with json
-    res.json(JSON.stringify(schemas)).end();
+    res.status(200).set('Content-Type', 'application/json')
+      .json(schemas).end();
   } catch(err) {
     console.error(err);
     res.status(500).end();
